@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
         }
 
         Move();
+
+        _speed += 0.03f*Time.deltaTime;
     }
 
     void Move(){
@@ -40,5 +42,12 @@ public class Player : MonoBehaviour
         Vector3 dir = new Vector3(0,0,-_distance);
         cam.transform.position = transform.position + dir;
         cam.transform.LookAt(transform);
+    }
+
+    void OnTriggerEnter(Collider collider){
+        if(collider.name == "Crater(Clone)" || collider.name == "Asteroid(Clone)"){
+            GameState.Instance.InitiateGameOver();
+            Destroy(gameObject);
+        }
     }
 }

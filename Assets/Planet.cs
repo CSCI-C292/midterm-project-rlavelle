@@ -9,7 +9,6 @@ public class Planet : MonoBehaviour
 
     [SerializeField] RuntimeData _runtimeData;
     [SerializeField] float _shrinkScale = 0.75f;
-    [SerializeField] GameObject _diameterText;
     [SerializeField] GameObject _asteroidPrefab;
     [SerializeField] GameObject _craterPrefab;
 
@@ -22,10 +21,7 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // shrink the sphere
-        //transform.localScale -= new Vector3(_shrinkScale,_shrinkScale,_shrinkScale)*Time.deltaTime;
-        //_runtimeData.sphereDiameter -= _shrinkScale*Time.deltaTime;
-        //_diameterText.GetComponent<Text>().text = _runtimeData.sphereDiameter.ToString("F2");
+
     }
 
     void SpawnAsteroid(){
